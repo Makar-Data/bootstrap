@@ -58,7 +58,6 @@ ci_low = np.percentile(difference, perc_low)
 ci_high = np.percentile(difference, perc_high)
 
 # If the distribution is to the right of the red line - bootstrap 2 has bigger values. To the left, the bootstrap2.
-
 fig, ax = plt.subplots()
 ax.hist(difference, bins=25)
 ax.axvline(x=0, color='red', label='Zero: 0.00')
