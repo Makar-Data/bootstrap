@@ -7,7 +7,7 @@ Variables to keep in mind:
 - Target statistic (statistic)
 - Number or resamples (n_resamples)
 - Method of bootstrap() (method)
-- Confidence interval calculation method. Here the Efron method is used
+- Confidence interval calculation method. Here the Efron method is used (based on percentiles)
 
 Simple bootstrap
 ```Python
