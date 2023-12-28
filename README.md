@@ -4,8 +4,8 @@ Bootstrap demonstrations from personal projects.
 
 Simple bootstrap
 ```Python
-import pandas as pd  
 import numpy as np  
+import pandas as pd  
 import matplotlib.pyplot as plt  
 from scipy.stats import bootstrap  
 
@@ -33,11 +33,10 @@ plt.show()
 
 Bootstrap hypothesis testing
 ```Python
-import pandas as pd
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import bootstrap
-from sklearn import datasets
 
 iris_data = datasets.load_iris()
 mydata = pd.DataFrame(data = iris_data.data, columns = iris_data.feature_names)
