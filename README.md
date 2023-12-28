@@ -1,6 +1,6 @@
 # Bootstrap
 
-Bootstrap demonstrations based on eCommerce behavior dataset: https://www.kaggle.com/datasets/mkechinov/ecommerce-behavior-data-from-multi-category-store
+Bootstrap demonstrations from personal projects.
 
 Simple bootstrap
 ```Python
@@ -8,9 +8,8 @@ import pandas as pd
 import numpy as np  
 import matplotlib.pyplot as plt  
 from scipy.stats import bootstrap  
-  
-df = pd.read_pickle('sales_data.pkl')  
-data = np.array(df['price'])  
+
+data = np.array(df[column])  
   
 boot_conf = 0.95  
 bootstrap_ci = bootstrap(data=(data, ), statistic=np.mean, confidence_level=boot_conf, random_state=42, n_resamples=1000, method='percentile')  
@@ -40,32 +39,27 @@ import matplotlib.pyplot as plt
 from scipy.stats import bootstrap
 from sklearn import datasets
 
-# df = pd.read_pickle('sales_data.pkl')
-# data = np.array(df['price'])
-
 iris_data = datasets.load_iris()
 mydata = pd.DataFrame(data = iris_data.data, columns = iris_data.feature_names)
 mydata['target'] = iris_data.target
 dataportion = mydata[['sepal length (cm)', 'target']]
 
-sepal_versi = dataportion.loc[dataportion['target'] == 1]['sepal length (cm)']
-sepal_virgi = dataportion.loc[dataportion['target'] == 2]['sepal length (cm)']
+data_1 = np.array(df.loc[df[groups] == 1)][column])
+data_2 = np.array(df.loc[df[groups] == 2)][column])
 
 boot_conf = 0.95
-bootstrap1 = bootstrap(data=(sepal_virgi, ), statistic=np.mean, confidence_level=boot_conf, random_state=42, n_resamples=1000, method='percentile')
-bootstrap2 = bootstrap(data=(sepal_versi, ), statistic=np.mean, confidence_level=boot_conf, random_state=42, n_resamples=1000, method='percentile')
+bootstrap1 = bootstrap(data=(data_1, ), statistic=np.mean, confidence_level=boot_conf, random_state=42, n_resamples=1000, method='percentile')
+bootstrap2 = bootstrap(data=(data_2, ), statistic=np.mean, confidence_level=boot_conf, random_state=42, n_resamples=1000, method='percentile')
 
-# Разница и доверительный интервал Эфрона
+# Stat difference and Efron's confidence interval
 difference = bootstrap2.bootstrap_distribution - bootstrap1.bootstrap_distribution
 perc_low = ((1 - boot_conf) / 2) * 100
 perc_high = (boot_conf * 100) + perc_low
 ci_low = np.percentile(difference, perc_low)
 ci_high = np.percentile(difference, perc_high)
 
-print(bootstrap1.confidence_interval)
-print(bootstrap2.confidence_interval)
+# If the distribution is to the right of the red line - bootstrap 2 has bigger values. To the left, the bootstrap2.
 
-# Если правее - то bootstrap2 больше. Если левее, то bootstrap1
 fig, ax = plt.subplots()
 ax.hist(difference, bins=25)
 ax.axvline(x=0, color='red', label='Zero: 0.00')
