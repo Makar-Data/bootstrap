@@ -15,7 +15,7 @@ Outside the bootstrap() function:
 
 ---
 
-Simple bootstrap
+### Simple bootstrap
 ```Python
 import numpy as np  
 import pandas as pd  
@@ -44,7 +44,7 @@ plt.show()
 ![image](https://github.com/Makar-Data/bootstrap/assets/152608115/c97a10f6-b24c-412d-8af1-81d575ed07f8)
 
 
-Bootstrap hypothesis testing
+### Bootstrap hypothesis testing
 ```Python
 import numpy as np
 import pandas as pd
