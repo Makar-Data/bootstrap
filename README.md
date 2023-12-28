@@ -3,10 +3,10 @@
 Bootstrap demonstrations from personal projects.
 
 Variables to keep in mind:
-- Bootstrap confidence level
-- Target statistic
-- Number or resamples
-- Method of bootstrap()
+- Bootstrap confidence level (boot_conf)
+- Target statistic (statistic)
+- Number or resamples (n_resamples)
+- Method of bootstrap() (method)
 - Confidence interval calculation method. Here the Efron method is used
 
 Simple bootstrap
