@@ -1,6 +1,6 @@
 # Bootstrap
 
-Bootstrap demonstrations from personal projects.
+Most basic bootstrap demonstrations from personal projects.
 
 Variables to keep in mind:
 
