@@ -9,7 +9,7 @@ Inside the bootstrap() function:
 - Target statistic (statistic)
 - Number or resamples (n_resamples)
 - Method of bootstrap() (method)
-- 
+  
 Outside the bootstrap() function:
 - Confidence interval calculation method. Here the Efron method based on percentiles is used. However, exercise caution with it if the data is skewed 
 
