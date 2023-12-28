@@ -2,6 +2,13 @@
 
 Bootstrap demonstrations from personal projects.
 
+Variables to keep in mind:
+- Bootstrap confidence level
+- Target statistic
+- Number or resamples
+- Method of bootstrap()
+- Confidence interval calculation method. Here the Efron method is used
+
 Simple bootstrap
 ```Python
 import numpy as np  
@@ -37,11 +44,6 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.stats import bootstrap
-
-iris_data = datasets.load_iris()
-mydata = pd.DataFrame(data = iris_data.data, columns = iris_data.feature_names)
-mydata['target'] = iris_data.target
-dataportion = mydata[['sepal length (cm)', 'target']]
 
 data_1 = np.array(df.loc[df[groups] == 1)][column])
 data_2 = np.array(df.loc[df[groups] == 2)][column])
