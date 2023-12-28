@@ -13,6 +13,8 @@ Inside the bootstrap() function:
 Outside the bootstrap() function:
 - Confidence interval calculation method. Here the Efron method based on percentiles is used. However, exercise caution with it if the data is skewed 
 
+---
+
 Simple bootstrap
 ```Python
 import numpy as np  
